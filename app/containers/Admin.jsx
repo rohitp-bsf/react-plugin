@@ -21,7 +21,6 @@ export default class Admin extends Component {
       restNonce: this.props.wpObject.api_nonce,
     });
 
-    // Get the currently set email address from our /admin endpoint and update the email state accordingly
     this.getSetting();
   }
 
@@ -43,7 +42,7 @@ export default class Admin extends Component {
       (err) => this.setState({
         notice: {
           type: 'error',
-          message: err.message, // The error message returned by the REST API
+          message: err.message,
         }
       })
     );
@@ -119,11 +118,15 @@ export default class Admin extends Component {
       <div className="wrap">
         {notice}
         <form>
-          <h1>Contact Form Settings</h1>
+          <h1> React Plugin Form Settings </h1>
+          <br/>
           
           <label>
           Notification Email:
             <input
+                style={ {
+                  marginLeft: '5px'
+                } }
               type="email"
               value={this.state.email}
               onChange={this.updateInput}
@@ -132,12 +135,18 @@ export default class Admin extends Component {
 
           <button
             id="save"
+            style={ {
+              marginLeft: '5px'
+            } }
             className="button button-primary"
             onClick={this.handleSave}
           >Save</button>
 
           <button
             id="delete"
+            style={ {
+              marginLeft: '5px'
+            } }
             className="button button-primary"
             onClick={this.handleDelete}
           >Delete</button>

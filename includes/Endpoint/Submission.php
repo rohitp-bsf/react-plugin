@@ -1,13 +1,7 @@
 <?php
 /**
  * React Plugin
- *
- *
  * @package   React Plugin
- * @author    Pangolin
- * @license   GPL-3.0
- * @link      https://gopangolin.com
- * @copyright 2017 Pangolin (Pty) Ltd
  */
 
 namespace BSF\ReactPlugin\Endpoint;
@@ -113,10 +107,6 @@ class Submission {
         $name = $request->get_param( 'name' );
         $email = $request->get_param( 'email' );
         $message = $request->get_param( 'message' );
-
-        if ( class_exists('PC') ) {
-            \PC::debug( $message . ' - ' . $name . ' (' . $email . ')', 'Contact Submission' );
-        }
         
         return new \WP_REST_Response( array(
             'success'   => true,

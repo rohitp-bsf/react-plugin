@@ -9,6 +9,8 @@ const methods = [
 
 export default class fetchWP {
   constructor( options = {} ) {
+
+    debugger;
     this.options = options;
     
     if ( !options.restURL )
@@ -37,7 +39,7 @@ export default class fetchWP {
       if ( data ) {
         fetchObject.body = JSON.stringify(data);
       }
-      
+
       return fetch(this.options.restURL + endpoint, fetchObject)
       .then(response => {
         return response.json().then(json => {

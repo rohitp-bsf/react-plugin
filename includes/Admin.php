@@ -122,7 +122,7 @@ class Admin {
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
 
-			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', dirname( __FILE__ ) ), array( 'jquery' ), $this->version );
+			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __DIR__ ), array( 'jquery' ), $this->version );
 
 			wp_localize_script( $this->plugin_slug . '-admin-script', 'react_plugin_object', array(
 				'api_nonce'   => wp_create_nonce( 'wp_rest' ),
